@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<title>Frame 25 | Creative Production Agency</title>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-primary-fixed": "#002022",
+                "secondary": "#95d1d6",
+                "error": "#ffb4ab",
+                "on-primary-fixed-variant": "#004f54",
+                "primary-container": "#00f2ff",
+                "on-secondary-container": "#87c2c7",
+                "primary-fixed-dim": "#00dbe7",
+                "on-primary": "#00363a",
+                "surface-variant": "#353534",
+                "surface-container-high": "#2a2a2a",
+                "tertiary-container": "#fed83a",
+                "outline": "#849495",
+                "on-secondary": "#00363a",
+                "on-error-container": "#ffdad6",
+                "on-tertiary": "#3b2f00",
+                "on-tertiary-fixed-variant": "#554500",
+                "on-tertiary-fixed": "#221b00",
+                "surface-container-low": "#1c1b1b",
+                "tertiary": "#fff6e4",
+                "on-secondary-fixed-variant": "#064f53",
+                "inverse-surface": "#e5e2e1",
+                "inverse-primary": "#00696f",
+                "outline-variant": "#3a494b",
+                "tertiary-fixed-dim": "#e8c423",
+                "inverse-on-surface": "#313030",
+                "error-container": "#93000a",
+                "surface-tint": "#00dbe7",
+                "secondary-fixed": "#b1edf2",
+                "background": "#131313",
+                "on-primary-container": "#006a71",
+                "surface-bright": "#3a3939",
+                "surface-container": "#201f1f",
+                "surface": "#131313",
+                "on-error": "#690005",
+                "primary-fixed": "#74f5ff",
+                "on-background": "#e5e2e1",
+                "surface-container-lowest": "#0e0e0e",
+                "secondary-container": "#0b5156",
+                "primary": "#e1fdff",
+                "surface-container-highest": "#353534",
+                "on-surface": "#e5e2e1",
+                "on-surface-variant": "#b9cacb",
+                "secondary-fixed-dim": "#95d1d6",
+                "tertiary-fixed": "#ffe173",
+                "on-tertiary-container": "#725e00",
+                "on-secondary-fixed": "#002022",
+                "surface-dim": "#131313"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "fontFamily": {
+                "headline": ["Inter"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-card {
+            background: rgba(28, 27, 27, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(58, 73, 75, 0.15);
+        }
+    </style>
+</head>
+<body class="selection:bg-primary-container selection:text-on-primary">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-[#131313]/40 backdrop-blur-md shadow-[0_20px_40px_rgba(0,242,255,0.04)]">
+<div class="flex justify-between items-center px-6 md:px-12 py-6 max-w-[1920px] mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#e5e2e1]">Frame 25</div>
+<div class="hidden md:flex gap-10 items-center">
+<a data-i18n="nav_portfolio" class="font-['Inter'] tracking-tight font-medium text-sm text-[#e5e2e1] hover:text-[#00f2ff] transition-colors duration-300" href="#portfolio">Portfolio</a>
+<a data-i18n="nav_services" class="font-['Inter'] tracking-tight font-medium text-sm text-[#e5e2e1] hover:text-[#00f2ff] transition-colors duration-300" href="#services">Services</a>
+<a data-i18n="nav_pricing" class="font-['Inter'] tracking-tight font-medium text-sm text-[#e5e2e1] hover:text-[#00f2ff] transition-colors duration-300" href="#pricing">Pricing</a>
+<a data-i18n="nav_contact" class="font-['Inter'] tracking-tight font-medium text-sm text-[#e5e2e1] hover:text-[#00f2ff] transition-colors duration-300" href="#contact">Contact</a>
+</div>
+<div class="flex items-center gap-2 text-sm font-bold text-on-surface">
+    <button id="lang-ru" class="text-primary-container transition-colors">RU</button>
+    <span class="text-outline-variant">|</span>
+    <button id="lang-uz" class="hover:text-primary-container transition-colors">UZ</button>
+</div>
+<button data-i18n="nav_start" onclick="document.getElementById('contact').scrollIntoView()" class="bg-primary-container text-on-primary px-6 py-2.5 rounded-full font-bold text-sm tracking-tight scale-95 active:scale-90 transition-transform hover:opacity-80">
+                Get Started
+            </button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-40" data-alt="cinematic slow motion shot of a high-end camera lens on a gimbal in a dark studio with electric blue neon reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVBsxZUx95VJgS5cS3P-EIqrfwRAUaxZI7Crs15yHy3qB68KWOeRWG4dy39wJLM16t11nstY7OwZaDoswa4Bdm8F_e_--sgQyepmzCgMwX4sKxjUREgKnRABLwnUw_zJL5eZIMAzT9XPD8IQ2w5TfDV7KtaD0Pbv39yL2SmP5Xwx56KZYWsfoZUI8r13Bl5ljfSyDvrh-8J7pPSbp982KhWLMJwC72jCydkCANzhFGj0kmTqksiU-nxObAf83UPedjB5bdwAdW5Qg"/>
+<div class="absolute inset-0 bg-gradient-to-b from-[#131313]/80 via-transparent to-[#131313]"></div>
+</div>
+<div class="relative z-10 text-center px-6 max-w-5xl">
+<h1 data-i18n="hero_title" class="text-5xl md:text-8xl font-black tracking-tighter mb-8 leading-[0.9] text-on-surface">
+                    Создаём контент, который приводит <span class="text-primary-container">клиентов</span>
+</h1>
+<p data-i18n="hero_desc" class="text-lg md:text-2xl text-secondary font-light max-w-2xl mx-auto mb-12">
+                    Видео, дизайн и продвижение под ключ для бизнеса и блогеров
+                </p>
+<div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+<button data-i18n="hero_btn1" onclick="document.getElementById('contact').scrollIntoView()" class="w-full md:w-auto px-10 py-5 bg-gradient-to-br from-primary-container to-primary-fixed-dim text-on-primary font-bold rounded-full text-lg shadow-[0_0_30px_rgba(0,242,255,0.3)] hover:scale-105 transition-transform">
+                        Получить консультацию
+                    </button>
+<a data-i18n="hero_btn2" href="https://t.me/frame25_agency" target="_blank" class="w-full md:w-auto px-10 py-5 border border-outline-variant text-on-surface font-bold rounded-full text-lg hover:bg-surface-container-low transition-colors text-center inline-block">
+                        Написать в Telegram
+                    </a>
+</div>
+</div>
+</section>
+<!-- Portfolio Bento Grid -->
+<section class="py-32 px-6 md:px-12 bg-surface" id="portfolio">
+<div class="max-w-[1400px] mx-auto">
+<div class="flex justify-between items-end mb-10">
+<div>
+<span class="font-['Inter'] text-xs uppercase tracking-[0.2em] text-secondary mb-4 block">Selected Works</span>
+<h2 class="text-4xl md:text-6xl font-bold tracking-tighter">Наши кейсы</h2>
+</div>
+</div>
+<!-- Filters -->
+<div class="flex flex-wrap gap-4 mb-12" id="portfolio-filters">
+    <button data-filter="all" class="px-6 py-2 rounded-full border border-primary-container text-primary-container bg-surface-container-high transition-colors active-filter"><span data-i18n="filter_all">Все работы</span></button>
+    <button data-filter="youtube" class="px-6 py-2 rounded-full border border-outline-variant text-on-surface hover:border-primary-container hover:text-primary-container hover:bg-surface-container-high transition-colors"><span data-i18n="filter_youtube">YouTube ролики</span></button>
+    <button data-filter="reels" class="px-6 py-2 rounded-full border border-outline-variant text-on-surface hover:border-primary-container hover:text-primary-container hover:bg-surface-container-high transition-colors"><span data-i18n="filter_reels">Reels ролики</span></button>
+    <button data-filter="commercial" class="px-6 py-2 rounded-full border border-outline-variant text-on-surface hover:border-primary-container hover:text-primary-container hover:bg-surface-container-high transition-colors"><span data-i18n="filter_commercial">Рекламные ролики</span></button>
+    <button data-filter="ai" class="px-6 py-2 rounded-full border border-outline-variant text-on-surface hover:border-primary-container hover:text-primary-container hover:bg-surface-container-high transition-colors"><span data-i18n="filter_ai">Ролики с ИИ</span></button>
+    <button data-filter="design" class="px-6 py-2 rounded-full border border-outline-variant text-on-surface hover:border-primary-container hover:text-primary-container hover:bg-surface-container-high transition-colors"><span data-i18n="filter_design">Дизайн проекты</span></button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6" id="portfolio-grid">
+<!-- Large Feature Card -->
+<div data-category="commercial" class="portfolio-item md:col-span-8 group relative overflow-hidden rounded-xl bg-surface-container-low aspect-video transition-all duration-500">
+<video autoplay loop muted playsinline class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70" src="https://vp.wfolio.com/video_proxies/of4j5aS4cVwPTxC_axvSqrwLBLXu43aS/F9QAoX_0jwsGlkBRA7Mj5IeWWrSQHAIG/FPQ6UsMXswtfiBF19fHiCAsJqj6txDtV/Z1Twl-R0tfF8GKqrTD2J9hqp1q181-N3/fbMHQmCswe76x-qLKLBUlrxGe9JfZxI_/lLTEqGnEWL5SWSAfy-LlypZsuP5mStJT/mDifjHPfnOr3pZEzZ6DH0hXgapZW11Q3/QywnIz3amLk.mp4"></video>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-10 flex flex-col justify-end">
+<span class="inline-block px-3 py-1 bg-primary-container text-on-primary text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 w-fit">+30% заявок</span>
+<h3 class="text-3xl font-bold">Fashion Commercial for 'Aura'</h3>
+</div>
+</div>
+<!-- Small Side Card -->
+<div data-category="youtube" class="portfolio-item md:col-span-4 group relative overflow-hidden rounded-xl bg-surface-container-low transition-all duration-500">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70" src="https://i.wfolio.com/x/23Q2n7kS-flJtGEKTA-UZrXIhu7kMsVH/sUAZphw6dagxa5MqR_Brd5CW10V9Sxa7/tRZJRG6O9aZWPYP0-hRGz2KID2vp1UIA/W7H8lqrl_bvFFA3az80bgdyUQOPpFFgx/oUkrQ6Ajcl17LG6q-bK4WIpuVKyIugLY/MCsgXOr9y-B_LAeVuRp4WlRgPNXi3GbD/M3oNYMFtiYq95cwjV4MdlfXPeETEz-Ym/zz2omLnkPz87YJzeS87W_RpPvwTQ2__v/9Z_aL_QdXxJPuxYkyWhHK4OiFC0e9JUo/xyI-Ij5PgXVW4XstqjPP8S5Wxn8U375i/zxuxOf5emPZ2m0TEb_1u7eJOFm1DM196/4IbHwq_gdBn7vl2AK5nMGqGsaf5Hd26M/SUjrMsj_cf3Rqamc2B3QT18Hmg0ZTn99/892rjEsZu2C9NU-gmEDTXOHLDBWczoqr/t0MkHL4NPfshDHCqdIn4-JaLdNKsQE_3/va9R2RH-p1EJ_k9BfhZwt-auueZ3Zf6Q/mD8KrEA4o1EwdVLAUPEySDD1LbAcAatK/J7scySuu37aSAl-8ZgyD4EQjvc6hz9qD/bkumr2OCzjHUu6v2sPMy-CJpDzJvhi2O/Z8tzMRuMpqwV0lH-I2qhpSs3hMtkEoIK/--J-1g5ExQQ7SPw8lFHjkw.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-6 flex flex-col justify-end">
+<span class="inline-block px-3 py-1 bg-surface-container-highest text-on-surface text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 w-fit">Tech Review</span>
+<h3 class="text-xl font-bold">Gadget Unboxing Series</h3>
+</div>
+</div>
+<!-- Row of 3 -->
+<div data-category="youtube" class="portfolio-item md:col-span-4 group relative overflow-hidden rounded-xl bg-surface-container-low aspect-square transition-all duration-500">
+<video autoplay loop muted playsinline class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70" src="https://vp.wfolio.com/video_proxies/of4j5aS4cVwPTxC_axvSqrwLBLXu43aS/F9QAoX_0jwsGlkBRA7Mj5IeWWrSQHAIG/FPQ6UsMXswtfiBF19fHiCAsJqj6txDtV/Z1Twl-R0tfF8GKqrTD2J9hqp1q181-N3/fbMHQmCswe76x-qLKLBUlrxGe9JfZxI_/lLTEqGnEWL5SWSAfy-LlypZsuP5mStJT/mDifjHPfnOr3pZEzZ6DH0hXgapZW11Q3/QywnIz3amLk.mp4"></video>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-6 flex flex-col justify-end">
+<h3 class="text-xl font-bold">Corporate Identity Film</h3>
+</div>
+</div>
+<div data-category="reels" class="portfolio-item md:col-span-4 group relative overflow-hidden rounded-xl bg-surface-container-low aspect-square transition-all duration-500">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70" src="https://i.wfolio.com/x/nh2hBFOybeR4yRlieqG9JlRiTiv0x6Fn/-YMemOHfwb3tFFPWGCL2z-PEukVynWJ9/MS9pI2e5A66x-bJhkUWL6aEZcsaGfsFy/UsBiJ6sY744uMxdOGzyn9L5QPJTg_F8m/4q5cn3hbI329_tAflTIyTvCBD8HdO7JG/5IKcm2w844pAtKtFFNNzS2rULZVgMcTm/WFnnEsPu4273koorxEILJ_eq46aCZErS/CCqEoGibWxWAPHXk9FabNaUXhAHks7pK/0AUMmau9DjPCJ97vLBxcWOIh0Waj5vX7/Ep7OGLY_DxYXcl_bbMObdKWo99dQRgXt/ujvsaXfbaid_XwvHbZbjiPOR4Pg_65tM/kxvlTAAylIPnQXdXw0sBxFyN_4zmhWiy/pWPcoHnPEpU6eNi5I_FZrLP1zZjAOTJo/QlLi1lYycrWEcUejyHlfL59hFL3J1Dvn/7Lj0FJrvjJkQBqivCKHhga6Q0_Kgxwhv/jlYbQvvWPuQZ8uYwILUpXXOeo0PTF8Ex/URMuA68yWBxRI8126T7n_7HSf9z3kI3H/EdJhia9sfhugxD6KhE5W5BjDog-OdAR2/CzGd-rzTkKvkQBVu_7FvUG9wgiEEbL2c/OhkmvdUss4UHeXOxFdRmoF3_O4f1a1Hf/vxPGsbmYfILCUu-oR2wKVA.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-6 flex flex-col justify-end">
+<span class="inline-block px-3 py-1 bg-primary-container text-on-primary text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 w-fit">2M Views</span>
+<h3 class="text-xl font-bold">Watch Aesthetic Reels</h3>
+</div>
+</div>
+<div data-category="ai" class="portfolio-item md:col-span-4 group relative overflow-hidden rounded-xl bg-surface-container-low aspect-square transition-all duration-500">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70" src="https://i.wfolio.com/x/Erhj60RfGoSDn6LYN1vjjheZsgmFENWg/70nl7vp0vtA5I_3875z-74SYoU4uutGd/sKWLdkPGTgdMywQcC8RBXGxqrDdxByj5/mdJNivi8Om1ME5ShhDpJv2I9d1vVU-zo/uywrXE0Q5k_tQTgqK-imo7OsCUNh48vC/Rh3c5yZBB6bzBacFvIWXfQh8x6gTyBWA/Q0wwyuDIHK3ENcvX4boz_la5mjjm1q92/fXXUO5HBnW133O6kujE7oKcpWd9SJPCY/jmgAdAOab_G50rkhwQKEDB3e079X26Fa/1QY25XBOVbFnXOME8WAH071K_aqc5kNr/Cf3GPeBZz-4ZOfHKI5ASS2entqLZgOoH/yRRtxcsi55xjhJ-W5qxycynnBCQ2bfON/QRcyNawRHIB2Cj1c7flmiQO0T-tGW_k9/02Zs0ZCXpZnP5ofms_i7mJ-_XrEpRYHm/Al9FmtpcIBjz4Ze-hgbNOoBWFJxzePSQ/E2Roc7231jSHKPaxzb4NAfFierr7cs56/wQDoTON9gVhnVeFs3lez2jgmr9dWk_oE/tptQbGpaFnKYD0cYl9h1XCv20_2tus12/OqKzluZHURIneVTCzSgMVeTNfkZqp5Wg/LSES5VxZjGI.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-6 flex flex-col justify-end">
+<h3 class="text-xl font-bold">Music Video 'Eclipse'</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services -->
+<section class="py-32 px-6 md:px-12 bg-surface-container-lowest" id="services">
+<div class="max-w-[1400px] mx-auto">
+<div class="text-center mb-24">
+<span class="font-['Inter'] text-xs uppercase tracking-[0.2em] text-secondary mb-4 block">Expertise</span>
+<h2 class="text-4xl md:text-7xl font-bold tracking-tighter">Наши услуги</h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+<!-- Turnkey -->
+<div>
+<h3 class="text-2xl font-bold mb-12 border-b border-outline-variant/30 pb-4">Комплексно (Под ключ)</h3>
+<div class="space-y-12">
+<div class="flex gap-8 group">
+<div class="w-14 h-14 rounded-xl bg-surface-container-high flex items-center justify-center text-primary-container shrink-0">
+<span class="material-symbols-outlined text-3xl">campaign</span>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-2 group-hover:text-primary-container transition-colors">SMM-стратегия</h4>
+<p class="text-on-surface-variant leading-relaxed">Полное ведение ваших соцсетей: от концепции до ежедневного постинга и общения с аудиторией.</p>
+</div>
+</div>
+<div class="flex gap-8 group">
+<div class="w-14 h-14 rounded-xl bg-surface-container-high flex items-center justify-center text-primary-container shrink-0">
+<span class="material-symbols-outlined text-3xl">movie</span>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-2 group-hover:text-primary-container transition-colors">Production</h4>
+<p class="text-on-surface-variant leading-relaxed">Разработка сценария, поиск локаций, съемка на профессиональное оборудование и монтаж.</p>
+</div>
+</div>
+<div class="flex gap-8 group">
+<div class="w-14 h-14 rounded-xl bg-surface-container-high flex items-center justify-center text-primary-container shrink-0">
+<span class="material-symbols-outlined text-3xl">ads_click</span>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-2 group-hover:text-primary-container transition-colors">Digital Ads</h4>
+<p class="text-on-surface-variant leading-relaxed">Запуск таргетированной рекламы и работа с блогерами для масштабирования ваших охватов.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Single Services -->
+<div>
+<h3 class="text-2xl font-bold mb-12 border-b border-outline-variant/30 pb-4">Разовые услуги</h3>
+<div class="grid grid-cols-2 gap-6">
+<div class="glass-card p-8 rounded-xl hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-primary-container mb-4 block">content_cut</span>
+<h4 class="font-bold">Монтаж</h4>
+</div>
+<div class="glass-card p-8 rounded-xl hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-primary-container mb-4 block">photo_camera</span>
+<h4 class="font-bold">Съёмка</h4>
+</div>
+<div class="glass-card p-8 rounded-xl hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-primary-container mb-4 block">draw</span>
+<h4 class="font-bold">Дизайн</h4>
+</div>
+<div class="glass-card p-8 rounded-xl hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-primary-container mb-4 block">track_changes</span>
+<h4 class="font-bold">Таргет</h4>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Tiers & Pricing -->
+<section class="py-32 px-6 md:px-12 bg-surface" id="pricing">
+<div class="max-w-[1200px] mx-auto">
+<div class="text-center mb-24">
+<h2 class="text-4xl md:text-6xl font-bold tracking-tighter mb-4">Выберите свой масштаб</h2>
+<p class="text-secondary">Пакетные предложения для разных этапов вашего бизнеса</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Start -->
+<div class="glass-card p-10 rounded-xl flex flex-col">
+<div class="mb-8">
+<span class="text-xs font-bold uppercase tracking-widest text-secondary">Start</span>
+<h3 id="price-start" class="text-3xl font-black mt-2">60 000 ₽</h3>
+</div>
+<ul class="space-y-4 mb-12 text-sm text-on-surface-variant flex-grow">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container text-lg">check_circle</span> 1 съемка в месяц</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container text-lg">check_circle</span> 10 Reels / Shorts</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container text-lg">check_circle</span> Базовый монтаж</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container text-lg">check_circle</span> Написание сценариев</li>
+</ul>
+<button class="w-full py-4 border border-outline-variant rounded-full font-bold hover:bg-white/5 transition-colors">Выбрать Start</button>
+</div>
+<!-- Grow -->
+<div class="bg-gradient-to-b from-primary-container to-[#00a3ad] p-[1px] rounded-xl relative scale-105 shadow-[0_30px_60px_rgba(0,242,255,0.15)] z-10">
+<div class="bg-surface-container-low p-10 rounded-xl h-full flex flex-col">
+<div class="mb-8">
+<div class="flex justify-between items-start">
+<span class="text-xs font-bold uppercase tracking-widest text-primary-container">Popular</span>
+<span class="bg-primary-container text-on-primary text-[10px] px-2 py-0.5 rounded font-bold">ХИТ</span>
+</div>
+<h3 class="text-3xl font-black mt-2 text-on-surface">Grow</h3>
+<div id="price-grow" class="text-3xl font-black mt-2">120 000 ₽</div>
+</div>
+<ul class="space-y-4 mb-12 text-sm text-on-surface flex-grow">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container text-lg">check_circle</span> 2 съемки в месяц</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container text-lg">check_circle</span> 20 Reels + YouTube Shorts</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container text-lg">check_circle</span> Сложный монтаж (VFX)</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container text-lg">check_circle</span> Обложки и упаковка</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container text-lg">check_circle</span> Анализ конкурентов</li>
+</ul>
+<button class="w-full py-4 bg-primary-container text-on-primary rounded-full font-bold shadow-[0_10px_20px_rgba(0,242,255,0.3)] hover:scale-105 transition-transform">Выбрать Grow</button>
+</div>
+</div>
+<!-- Pro -->
+<div class="glass-card p-10 rounded-xl flex flex-col">
+<div class="mb-8">
+<span class="text-xs font-bold uppercase tracking-widest text-secondary">Pro</span>
+<h3 id="price-pro" class="text-3xl font-black mt-2">250 000 ₽</h3>
+</div>
+<ul class="space-y-4 mb-12 text-sm text-on-surface-variant flex-grow">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container text-lg">check_circle</span> Unlimited съемки</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container text-lg">check_circle</span> Полный SMM цикл</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container text-lg">check_circle</span> Рекламная кампания</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container text-lg">check_circle</span> Персональный менеджер</li>
+</ul>
+<button class="w-full py-4 border border-outline-variant rounded-full font-bold hover:bg-white/5 transition-colors">Выбрать Pro</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Calculator -->
+<section class="py-32 px-6 md:px-12 bg-surface-container-low">
+<div class="max-w-[1000px] mx-auto glass-card p-12 rounded-3xl">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+<div>
+<h3 class="text-3xl font-bold mb-8">Калькулятор проекта</h3>
+<div class="space-y-8">
+<div>
+<label class="text-xs uppercase tracking-widest text-secondary mb-4 block"><span data-i18n="calc_videos_label">Количество видео</span>: <span id="videos-count-display" class="text-primary-container font-bold text-base">10</span></label>
+<input id="calc-videos-input" class="w-full h-1 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary-container" max="30" min="1" type="range" value="10"/>
+</div>
+<div class="space-y-4">
+<label class="text-xs uppercase tracking-widest text-secondary mb-2 block">Дополнительные опции</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="w-5 h-5 rounded border-outline-variant bg-transparent text-primary-container focus:ring-primary-container" type="checkbox"/>
+<span class="text-on-surface group-hover:text-primary-container transition-colors">Выездная съёмка</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline-variant bg-transparent text-primary-container focus:ring-primary-container" type="checkbox"/>
+<span class="text-on-surface group-hover:text-primary-container transition-colors">Сложная графика / VFX</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="w-5 h-5 rounded border-outline-variant bg-transparent text-primary-container focus:ring-primary-container" type="checkbox"/>
+<span class="text-on-surface group-hover:text-primary-container transition-colors">Разработка сценария</span>
+</label>
+</div>
+</div>
+</div>
+<div class="flex flex-col justify-center items-center text-center p-8 bg-surface-container-high rounded-2xl">
+<span class="text-sm text-secondary mb-2">Ориентировочная стоимость</span>
+<div class="text-5xl md:text-7xl font-black tracking-tighter text-on-surface mb-8">85 000 ₽</div>
+<button class="w-full py-5 bg-primary-container text-on-primary font-bold rounded-xl shadow-[0_15px_30px_rgba(0,242,255,0.2)] hover:scale-105 transition-transform">
+                            Получить расчёт
+                        </button>
+<p class="text-[10px] text-on-surface-variant mt-6 uppercase tracking-widest">Финальная стоимость после брифинга</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Team -->
+<section class="py-32 px-6 md:px-12 bg-surface">
+<div class="max-w-[1400px] mx-auto">
+<div class="mb-20">
+<h2 class="text-4xl md:text-6xl font-bold tracking-tighter">Кто создает ваш контент</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="group">
+<div class="aspect-[4/5] overflow-hidden rounded-xl mb-6 grayscale hover:grayscale-0 transition-all duration-700">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="professional male portrait of a creative director in a black turtleneck against a dark grey background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANo5owcc3Rc6BQrUrMDVVcBWdj3kx2iy48HH3ZdsP6TYGeWwYsz2aF4Rjlrx0hHHuSlpHZyhNe_vSeqsctU5PNIEu5ZcCI9qhASRf1aGRRfaddT99Nvzh7JQiFXeA9j5Z7A8WDnsqflsbX1fJKi0pou_Y5U17HMeqY7H_g99QK1WRhaXNH-r2l3eYB91-hhKEeoPBkY_TCwxH8LlLdg9MW7kwqH0aNsCJ8eiha55IrVizaEy3NYEdz3-Iy6lK2a7mS8jHMDLz4DrU"/>
+</div>
+<h4 class="text-2xl font-bold">Алексей Рамкин</h4>
+<p class="text-secondary uppercase text-xs tracking-widest mt-2">Founder / Director</p>
+</div>
+<div class="group">
+<div class="aspect-[4/5] overflow-hidden rounded-xl mb-6 grayscale hover:grayscale-0 transition-all duration-700">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="editorial portrait of a female creative editor with a sleek modern look in a professional studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDy8kxVZgPwxy71el88oXnKY33O7hPfKJk16RZ7MRlIWekuYoo21qyoZ_A6tC3KL82f1r_4aiAy_YG8_dVlM2D__jYT124dxDufpMiDry4JVa9AQg2rCUKys2qU-ouj9CU91jTzM7c5nk5F7NNkjzOMxk88LJHNtN4dNX3Ab5yX5Gzhdn7Nkwzv0_ryr60nfipke8aPbLs9nCoNA2Te0AvjUDNPXSqCM_BUCqb45hfkCKTj7W77yKi99xPuS30wRmcn_rsdmfjeoV0"/>
+</div>
+<h4 class="text-2xl font-bold">Мария Ветрова</h4>
+<p class="text-secondary uppercase text-xs tracking-widest mt-2">Senior Video Editor</p>
+</div>
+<div class="group">
+<div class="aspect-[4/5] overflow-hidden rounded-xl mb-6 grayscale hover:grayscale-0 transition-all duration-700">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="confident male designer with glasses looking at camera, cinematic low key lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYyT2A9Tt1OeH1nkkcgn6MjcRZeCamgg9k5wOWKTcnWX90ySPhM7iBR7J04vEWmZjMd89S3JRJ2co7VmoxxJG12W1g1apfsihWDC0UYRCUKy4SiomONhYNqV8aLrUg8UI83xF9mU2sFTkVlTUwEKpNKUVEzHV5Gh6-hRfFpdird7as6Zrmn00IQ4Ia4U_VRyeNEEpMrL9oGPTdkQaglDmNycYNEw19NmpphAkE9OTceZ0KUuEcGvUDh451AG2X2FqMlwzvIl7_Csw"/>
+</div>
+<h4 class="text-2xl font-bold">Иван Зотов</h4>
+<p class="text-secondary uppercase text-xs tracking-widest mt-2">Motion Designer</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-32 px-6 md:px-12 bg-surface-container-lowest overflow-hidden">
+<div class="max-w-[1400px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="glass-card p-10 rounded-2xl relative">
+<span class="material-symbols-outlined text-primary-container text-5xl absolute -top-4 -left-2 opacity-20" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<p class="text-lg leading-relaxed italic mb-8 relative z-10">"Frame 25 полностью изменили наш подход к Reels. За 2 месяца мы получили больше лидов, чем за весь прошлый год через таргет."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="avatar of a business owner" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqaJy-oW2w-ck6UG0aDUlWHCt989aB8AUXhCbqTAgAFfbQsMGFO-RZKSffieikU1VAznVcKYcCRcFP0CdukINyeqiLXVhdN2jLKVPNczHOpDHY5DVVr5dBNPaWtsC-4no3S4c9dVJT0VyO5-AHqE8-0PENhWIiBDU7Ju1xGb11wmQjrCDa2TRLUfLB-74dpCbr3ggYbQ2f8AbKpcFEbNcLDwkHKLIvxMfKHKIANbOG3iOREH0rUQH49YK-10RkPijv8fB7oFLY_rg"/>
+</div>
+<div>
+<h5 class="font-bold text-sm">Дмитрий Волков</h5>
+<p class="text-xs text-on-surface-variant">CEO TechStart</p>
+</div>
+</div>
+</div>
+<div class="glass-card p-10 rounded-2xl relative">
+<span class="material-symbols-outlined text-primary-container text-5xl absolute -top-4 -left-2 opacity-20" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<p class="text-lg leading-relaxed italic mb-8 relative z-10">"Профессионализм в каждой детали. От сценария до цветокоррекции — уровень топовых агентств за адекватный прайс."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="avatar of a lifestyle blogger" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrDe-S3LWiJuJON22vsaDsgrTnGns0eNvsYM4CRh5GBG-WsurNUDzXrJ8Xq33bj3v0_EDbSTXufx-rLaG4SO4sOqUZYNbwnJ9qBwOHEDbtxllzeJ5R_ivKBI7s_mn4Tt_-3KCYfU9hv6JPB_4AQEyXVoqyHavmCRNfP9WxCKRZq_Q726JmSvsaZNXjZiQQLTuo-VW5Twt3aJeqLbqL87hRTq6J4I66eiF3KOjqlz7jFQMeO_4eJ9aK8rCn_prHAzmflubVzitchbk"/>
+</div>
+<div>
+<h5 class="font-bold text-sm">Анна Мей</h5>
+<p class="text-xs text-on-surface-variant">Бьюти-блогер (800k+)</p>
+</div>
+</div>
+</div>
+<div class="glass-card p-10 rounded-2xl relative">
+<span class="material-symbols-outlined text-primary-container text-5xl absolute -top-4 -left-2 opacity-20" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<p class="text-lg leading-relaxed italic mb-8 relative z-10">"Ребята чувствуют тренды. Контент залетает в рекомендации стабильно. Очень рекомендую тем, кто хочет быстрый рост."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="avatar of a restaurant owner" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPBlbiIZX2cgwxhJ9oXSr55-JcSt5Xc2zLhY8c8X1ZuX9PMgsCuw_-cErwQvlXT2fH_7EjKV0aq-_Rd49lwAHHn0ZvpFRSLI3Y12iVgZ_T0TWQv8Gr9SgKg1K11InaslHjGMUaLRGq0gky8holTttuM5r4AwnytHCt1VO3UC27zGbYW0rrISew5C29hlhesB9oNywKhFzOImAjUt0FJLMOonYYIX4t7Xd6J-B-KpRTqjKCHlcSJV9eQU3f77e4A7xxN0eu4NSEd4o"/>
+</div>
+<div>
+<h5 class="font-bold text-sm">Сергей Орлов</h5>
+<p class="text-xs text-on-surface-variant">Владелец сети кофеен</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Lead Form & Final CTA -->
+<section class="py-32 px-6 md:px-12 bg-surface" id="contact">
+<div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div>
+<h2 class="text-5xl md:text-7xl font-black tracking-tighter mb-8 leading-tight">
+                        Оставьте заявку и получите идеи для контента <span class="text-primary-container italic">бесплатно</span>
+</h2>
+<p class="text-xl text-secondary leading-relaxed mb-12">
+                        Мы проанализируем ваш профиль и предложим 3 концепции видео, которые сработают именно в вашей нише.
+                    </p>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary-container">send</span>
+<span class="text-on-surface">t.me/frame25_agency</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary-container">call</span>
+<span class="text-on-surface">+7 (999) 000-25-25</span>
+</div>
+</div>
+</div>
+<div class="glass-card p-12 rounded-3xl">
+<form id="contact-form" class="space-y-8">
+<div class="relative">
+<input required id="contact-name" class="w-full bg-transparent border-0 border-b border-outline-variant py-4 focus:ring-0 focus:border-primary-container transition-colors placeholder:text-on-surface-variant" placeholder="Ваше имя" type="text"/>
+</div>
+<div class="relative">
+<input required id="contact-info" class="w-full bg-transparent border-0 border-b border-outline-variant py-4 focus:ring-0 focus:border-primary-container transition-colors placeholder:text-on-surface-variant" placeholder="Telegram или Телефон" type="text"/>
+</div>
+<div class="relative">
+<select required id="service-select" class="w-full bg-transparent border-0 border-b border-outline-variant py-4 focus:ring-0 focus:border-primary-container transition-colors text-on-surface-variant appearance-none">
+<option disabled="" selected="" value="">Какая услуга вас интересует?</option>
+<option value="turnkey">SMM под ключ</option>
+<option value="production">Видеопроизводство</option>
+<option value="ads">Реклама и таргет</option>
+<option value="consult">Консультация</option>
+</select>
+</div>
+<button id="submit-btn" class="w-full py-6 bg-primary-container text-on-primary font-black uppercase tracking-widest text-sm rounded-full shadow-[0_20px_40px_rgba(0,242,255,0.2)] hover:scale-[1.02] transition-transform" type="submit">
+                            Получить предложение
+                        </button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 px-6 md:px-12 bg-[#0e0e0e] bg-gradient-to-t from-[#1c1b1b] to-transparent">
+<div class="max-w-[1920px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-end w-full">
+<div class="space-y-6">
+<div class="text-xl font-bold text-[#e5e2e1]">Frame 25</div>
+<p class="font-['Inter'] text-xs uppercase tracking-widest text-[#95d1d6] max-w-xs leading-loose">
+                    High-end creative production and content strategy for digital growth.
+                </p>
+</div>
+<div class="flex flex-wrap gap-8">
+<a class="font-['Inter'] text-xs uppercase tracking-widest text-[#95d1d6] hover:text-[#00f2ff] transition-colors duration-500" href="https://www.instagram.com/shoxrux.edit/" target="_blank">Instagram</a>
+<a class="font-['Inter'] text-xs uppercase tracking-widest text-[#95d1d6] hover:text-[#00f2ff] transition-colors duration-500" href="#">Facebook</a>
+<a class="font-['Inter'] text-xs uppercase tracking-widest text-[#95d1d6] hover:text-[#00f2ff] transition-colors duration-500" href="https://t.me/frame25_agency" target="_blank">Telegram</a>
+<a class="font-['Inter'] text-xs uppercase tracking-widest text-[#95d1d6] hover:text-[#00f2ff] transition-colors duration-500" href="#">Privacy</a>
+</div>
+<div class="text-right">
+<p class="font-['Inter'] text-xs uppercase tracking-widest text-[#95d1d6] mb-2 opacity-50">© 2024 Frame 25. All rights reserved.</p>
+<div class="text-[#00f2ff] font-['Inter'] text-xs uppercase tracking-widest">Designed for Impact.</div>
+</div>
+</div>
+</footer>
+
+<script>
+    // 0. Language and Currency Configuration
+    const translations = {
+        ru: {
+            nav_portfolio: "Portfolio", nav_services: "Services", nav_pricing: "Pricing", nav_contact: "Contact", nav_start: "Get Started",
+            hero_title: "Создаём контент, который приводит <span class='text-primary-container'>клиентов</span>",
+            hero_desc: "Видео, дизайн и продвижение под ключ для бизнеса и блогеров",
+            hero_btn1: "Получить консультацию", hero_btn2: "Написать в Telegram",
+            calc_videos_label: "Количество видео",
+            portfolio_title: "Наши кейсы",
+            filter_all: "Все работы", filter_youtube: "YouTube ролики", filter_reels: "Reels ролики", filter_commercial: "Рекламные ролики", filter_ai: "Ролики с ИИ", filter_design: "Дизайн проекты",
+            services_title: "Наши услуги",
+            services_turnkey: "Комплексно (Под ключ)",
+            services_single: "Разовые услуги",
+            pricing_title: "Выберите свой масштаб",
+            pricing_desc: "Пакетные предложения для разных этапов вашего бизнеса",
+            btn_start: "Выбрать Start", btn_grow: "Выбрать Grow", btn_pro: "Выбрать Pro",
+            calc_title: "Калькулятор проекта",
+            calc_opts: "Дополнительные опции",
+            calc_opt1: "Выездная съёмка", calc_opt2: "Сложная графика / VFX", calc_opt3: "Разработка сценария",
+            calc_price_lbl: "Ориентировочная стоимость",
+            calc_btn: "Получить расчёт",
+            form_btn: "Получить предложение",
+            form_name_ph: "Ваше имя", form_contact_ph: "Telegram или Телефон",
+            contact_title: "Оставьте заявку и получите идеи для контента <span class='text-primary-container italic'>бесплатно</span>"
+        },
+        uz: {
+            nav_portfolio: "Portfel", nav_services: "Xizmatlar", nav_pricing: "Narxlar", nav_contact: "Aloqa", nav_start: "Boshlash",
+            hero_title: "Mijozlarni jalb qiladigan kontent <span class='text-primary-container'>yaratamiz</span>",
+            hero_desc: "Biznes va blogerlar uchun videoyechim, dizayn va reklama",
+            hero_btn1: "Konsultatsiya olish", hero_btn2: "Telegram orqali bog'lanish",
+            calc_videos_label: "Videolar soni",
+            portfolio_title: "Bizning loyihalar",
+            filter_all: "Barcha ishlar", filter_youtube: "YouTube roliklar", filter_reels: "Reels roliklar", filter_commercial: "Reklama roliklari", filter_ai: "SI qatnashgan roliklar", filter_design: "Dizayn loyihalar",
+            services_title: "Bizning xizmatlar",
+            services_turnkey: "Kompleks (Noldan boshlab)",
+            services_single: "Alohida xizmatlar",
+            pricing_title: "O'z miqyosingizni tanlang",
+            pricing_desc: "Biznesingizning turli bosqichlari uchun onson paketlar",
+            btn_start: "Start ni tanlash", btn_grow: "Grow ni tanlash", btn_pro: "Pro ni tanlash",
+            calc_title: "Loyiha kalkulyatori",
+            calc_opts: "Qo'shimcha variantlar",
+            calc_opt1: "Joyiga chiqib suratga olish", calc_opt2: "Murakkab grafika / VFX", calc_opt3: "Ssenariy ishlab chiqish",
+            calc_price_lbl: "Taxminiy narx",
+            calc_btn: "Taxminiy narxni olish",
+            form_btn: "Taklif olish",
+            form_name_ph: "Ismingiz", form_contact_ph: "Telegram yoki Telefon",
+            contact_title: "Ariza qoldiring va kontent g'oyalarini <span class='text-primary-container italic'>bepul</span> oling"
+        }
+    };
+
+    let currentLang = 'ru';
+    let basePricePerVideo = { ru: 50, uz: 600000 }; 
+    let addons = {
+        outdoor: { ru: 150, uz: 1800000 },
+        vfx: { ru: 300, uz: 3600000 },
+        script: { ru: 200, uz: 2400000 }
+    };
+    let plans = {
+        start: { ru: 600, uz: 7500000 },
+        grow: { ru: 1200, uz: 15000000 },
+        pro: { ru: 2500, uz: 30000000 }
+    };
+
+    function formatNumber(num, lang) {
+        if (lang === 'ru') return '$ ' + num.toLocaleString('en-US');
+        return num.toLocaleString('ru-RU') + ' UZS';
+    }
+
+    function setLanguage(lang) {
+        currentLang = lang;
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (translations[lang] && translations[lang][key]) {
+                el.innerHTML = translations[lang][key];
+            }
+        });
+        
+        updateStaticTexts(lang);
+        updatePricingCards(lang);
+        calculatePrice();
+
+        const btnRu = document.getElementById('lang-ru');
+        const btnUz = document.getElementById('lang-uz');
+        if(btnRu && btnUz) {
+            if(lang === 'ru') {
+                btnRu.classList.add('text-primary-container'); btnRu.classList.remove('text-on-surface-variant');
+                btnUz.classList.add('text-on-surface-variant'); btnUz.classList.remove('text-primary-container');
+            } else {
+                btnUz.classList.add('text-primary-container'); btnUz.classList.remove('text-on-surface-variant');
+                btnRu.classList.add('text-on-surface-variant'); btnRu.classList.remove('text-primary-container');
+            }
+        }
+        
+        // Update placeholders
+        const formName = document.getElementById('contact-name');
+        const formPhone = document.getElementById('contact-info');
+        if(formName) formName.placeholder = translations[lang].form_name_ph;
+        if(formPhone) formPhone.placeholder = translations[lang].form_contact_ph;
+    }
+
+    function updateStaticTexts(lang) {
+        const textNodes = {
+            'Наши кейсы': 'portfolio_title', 'Bizning loyihalar': 'portfolio_title',
+            'Наши услуги': 'services_title', 'Bizning xizmatlar': 'services_title',
+            'Комплексно (Под ключ)': 'services_turnkey', 'Kompleks (Noldan boshlab)': 'services_turnkey',
+            'Разовые услуги': 'services_single', 'Alohida xizmatlar': 'services_single',
+            'Выберите свой масштаб': 'pricing_title', "O'z miqyosingizni tanlang": 'pricing_title',
+            'Пакетные предложения для разных этапов вашего бизнеса': 'pricing_desc', 'Biznesingizning turli bosqichlari uchun onson paketlar': 'pricing_desc',
+            'Выбрать Start': 'btn_start', 'Start ni tanlash': 'btn_start',
+            'Выбрать Grow': 'btn_grow', 'Grow ni tanlash': 'btn_grow',
+            'Выбрать Pro': 'btn_pro', 'Pro ni tanlash': 'btn_pro',
+            'Калькулятор проекта': 'calc_title', 'Loyiha kalkulyatori': 'calc_title',
+            'Дополнительные опции': 'calc_opts', "Qo'shimcha variantlar": 'calc_opts',
+            'Выездная съёмка': 'calc_opt1', 'Joyiga chiqib suratga olish': 'calc_opt1',
+            'Сложная графика / VFX': 'calc_opt2', 'Murakkab grafika / VFX': 'calc_opt2',
+            'Разработка сценария': 'calc_opt3', 'Ssenariy ishlab chiqish': 'calc_opt3',
+            'Ориентировочная стоимость': 'calc_price_lbl', 'Taxminiy narx': 'calc_price_lbl',
+            'Получить расчёт': 'calc_btn', 'Taxminiy narxni olish': 'calc_btn',
+            'Получить предложение': 'form_btn', 'Taklif olish': 'form_btn'
+        };
+        document.querySelectorAll('h2, h3, p, button, a, span').forEach(el => {
+            const trimmed = el.textContent.trim();
+            if (textNodes[trimmed] && el.children.length === 0) {
+                el.textContent = translations[lang][textNodes[trimmed]];
+            }
+        });
+        
+        // Manual updates for elements with innerHTML
+        const contTitle = document.querySelector('h2.text-5xl.md\\:text-7xl');
+        if(contTitle) contTitle.innerHTML = translations[lang].contact_title;
+    }
+
+    function updatePricingCards(lang) {
+        let pStart = document.getElementById('price-start');
+        let pGrow = document.getElementById('price-grow');
+        let pPro = document.getElementById('price-pro');
+        if(pStart) pStart.textContent = formatNumber(plans.start[lang], lang);
+        if(pGrow) pGrow.textContent = formatNumber(plans.grow[lang], lang);
+        if(pPro) pPro.textContent = formatNumber(plans.pro[lang], lang);
+    }
+
+    let btnRu = document.getElementById('lang-ru');
+    let btnUz = document.getElementById('lang-uz');
+    if (btnRu) btnRu.addEventListener('click', () => setLanguage('ru'));
+    if (btnUz) btnUz.addEventListener('click', () => setLanguage('uz'));
+
+    const videosInput = document.getElementById('calc-videos-input');
+    const videosDisplay = document.getElementById('videos-count-display');
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const priceDisplay = document.querySelector('.text-5xl.md\\:text-7xl.font-black');
+
+    function calculatePrice() {
+        let videos = parseInt(videosInput ? videosInput.value : 10) || 10;
+        if(videosDisplay) videosDisplay.textContent = videos;
+        
+        let total = videos * basePricePerVideo[currentLang];
+        if(checkboxes.length >= 3) {
+            if(checkboxes[0].checked) total += addons.outdoor[currentLang];
+            if(checkboxes[1].checked) total += addons.vfx[currentLang];
+            if(checkboxes[2].checked) total += addons.script[currentLang];
+        }
+        if(priceDisplay) priceDisplay.textContent = formatNumber(total, currentLang);
+    }
+
+    if (videosInput) {
+        videosInput.addEventListener('input', calculatePrice);
+        checkboxes.forEach(cb => cb.addEventListener('change', calculatePrice));
+    }
+
+    const serviceSelect = document.getElementById('service-select');
+    function scrollToContactAndSelect(value) {
+        if(serviceSelect && value) serviceSelect.value = value;
+        document.getElementById('contact').scrollIntoView();
+    }
+
+    document.addEventListener('click', (e) => {
+        let btn = e.target.closest('button');
+        if (!btn) return;
+        let text = btn.textContent.trim();
+        if (text === translations['ru'].btn_start || text === translations['uz'].btn_start) {
+            scrollToContactAndSelect('production');
+        } else if (text === translations['ru'].btn_grow || text === translations['uz'].btn_grow || text === translations['ru'].btn_pro || text === translations['uz'].btn_pro) {
+            scrollToContactAndSelect('turnkey');
+        } else if (text === translations['ru'].calc_btn || text === translations['uz'].calc_btn) {
+            scrollToContactAndSelect('production');
+        }
+    });
+
+    const contactForm = document.getElementById('contact-form');
+    let submitBtn = document.getElementById('submit-btn');
+
+    if(contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('contact-name').value;
+            const info = document.getElementById('contact-info').value;
+            const serviceSelect = document.getElementById('service-select');
+            const service = serviceSelect.options[serviceSelect.selectedIndex].text;
+            
+            const text_message = `🎬 *Новая заявка с сайта Frame25!*\n\n👤 *Имя:* ${name}\n📞 *Контакт:* ${info}\n🎯 *Интересует:* ${service}`;
+            
+            fetch(`https://api.telegram.org/bot8792128472:AAEBp5V0pCOpyY3aIhpZHWyQI2MmvmKnQKg/sendMessage`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ chat_id: '1947053690', text: text_message, parse_mode: 'Markdown' })
+            }).then(() => {
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = (currentLang === 'ru') ? 'Заявка отправлена!' : 'Ariza yuborildi!';
+                submitBtn.classList.remove('bg-primary-container', 'text-on-primary');
+                submitBtn.classList.add('bg-secondary', 'text-on-secondary');
+                
+                contactForm.reset();
+                
+                setTimeout(() => {
+                    submitBtn.textContent = translations[currentLang].form_btn;
+                    submitBtn.classList.remove('bg-secondary', 'text-on-secondary');
+                    submitBtn.classList.add('bg-primary-container', 'text-on-primary');
+                }, 3000);
+            }).catch(error => {
+                console.error("Error sending message:", error);
+                submitBtn.textContent = "Ошибка / Xato";
+            });
+        });
+    }
+
+    // Portfolio Filters Logic
+    const filterBtns = document.querySelectorAll('#portfolio-filters button');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => {
+                b.classList.remove('bg-surface-container-high', 'text-primary-container', 'border-primary-container');
+            });
+            btn.classList.add('bg-surface-container-high', 'text-primary-container', 'border-primary-container');
+            
+            const filterValue = btn.getAttribute('data-filter');
+            
+            portfolioItems.forEach(item => {
+                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                    item.style.display = '';
+                    setTimeout(() => item.style.opacity = '1', 50);
+                } else {
+                    item.style.opacity = '0';
+                    setTimeout(() => item.style.display = 'none', 500);
+                }
+            });
+        });
+    });
+
+    // Initiate
+    updatePricingCards(currentLang);
+    calculatePrice();
+</script>
+</body></html>
