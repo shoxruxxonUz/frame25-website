@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>404 — Memory Full | Frame 25</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="animations.css" rel="stylesheet" />
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#002022",
+                    "error-container": "#93000a",
+                    "surface-tint": "#00dbe7",
+                    "surface-bright": "#3a3939",
+                    "primary-container": "#00f2ff",
+                    "on-primary": "#00363a",
+                    "on-tertiary": "#3b2f00",
+                    "on-background": "#e5e2e1",
+                    "primary": "#e1fdff",
+                    "on-surface": "#e5e2e1",
+                    "tertiary-fixed-dim": "#e8c423",
+                    "error": "#ffb4ab",
+                    "on-primary-container": "#006a71",
+                    "inverse-surface": "#e5e2e1",
+                    "on-tertiary-fixed": "#221b00",
+                    "inverse-on-surface": "#313030",
+                    "surface-container": "#201f1f",
+                    "on-error-container": "#ffdad6",
+                    "inverse-primary": "#00696f",
+                    "on-secondary-fixed-variant": "#064f53",
+                    "secondary": "#95d1d6",
+                    "on-primary-fixed-variant": "#004f54",
+                    "tertiary-container": "#fed83a",
+                    "on-error": "#690005",
+                    "outline-variant": "#3a494b",
+                    "surface-dim": "#131313",
+                    "outline": "#849495",
+                    "on-secondary-container": "#87c2c7",
+                    "secondary-fixed": "#b1edf2",
+                    "primary-fixed": "#74f5ff",
+                    "on-secondary": "#00363a",
+                    "tertiary": "#fff6e4",
+                    "tertiary-fixed": "#ffe173",
+                    "surface-container-low": "#1c1b1b",
+                    "surface": "#131313",
+                    "on-tertiary-container": "#725e00",
+                    "surface-container-lowest": "#0e0e0e",
+                    "surface-container-high": "#2a2a2a",
+                    "on-tertiary-fixed-variant": "#554500",
+                    "secondary-container": "#0b5156",
+                    "surface-variant": "#353534",
+                    "background": "#131313",
+                    "on-surface-variant": "#b9cacb",
+                    "surface-container-highest": "#353534",
+                    "primary-fixed-dim": "#00dbe7",
+                    "on-primary-fixed": "#002022",
+                    "secondary-fixed-dim": "#95d1d6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        @keyframes handheld {
+            0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1.05); }
+            25% { transform: translate(4px, -4px) rotate(0.2deg) scale(1.05); }
+            50% { transform: translate(-2px, 3px) rotate(-0.1deg) scale(1.05); }
+            75% { transform: translate(3px, 2px) rotate(0.1deg) scale(1.05); }
+        }
+        @keyframes flicker {
+            0%, 100% { opacity: 1; }
+            92% { opacity: 1; }
+            93% { opacity: 0.85; }
+            94% { opacity: 0.95; }
+            95% { opacity: 0.8; }
+            96% { opacity: 1; }
+        }
+        @keyframes blink-red {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        @keyframes pulse-cyan {
+            0%, 100% { filter: drop-shadow(0 0 2px #00f2ff); }
+            50% { filter: drop-shadow(0 0 15px #00f2ff); }
+        }
+        .handheld-scene {
+            animation: handheld 8s ease-in-out infinite;
+        }
+        .studio-flicker {
+            animation: flicker 12s linear infinite;
+        }
+        .rec-error-blink {
+            animation: blink-red 1s step-end infinite;
+        }
+        .cyan-pulse {
+            animation: pulse-cyan 2s ease-in-out infinite;
+        }
+        .glass-panel {
+            background: rgba(19, 19, 19, 0.4);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body overflow-hidden h-screen w-full select-none">
+<!-- Custom Cursor -->
+<div class="custom-cursor"></div>
+<div class="custom-cursor-follower"></div>
+
+<!-- Global Background Wrapper -->
+<div class="fixed inset-0 z-0 overflow-hidden bg-surface-container-lowest">
+<!-- Cinematic Background Image -->
+<div class="absolute inset-0 w-full h-full handheld-scene studio-flicker bg-cover bg-center" data-alt="Cinematic wide shot of a professional camera operator in a dark studio holding a memory card, moody teal lighting and dramatic shadows" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBbmY6B_uIG1uUFX-2O2A-FS2cBqWCVffBWgRUw83CiQiFXUKvMy5MHCW6QOO1GyQ3K90dtfDBhjCLWv3aZNwEtkbuPjjzt-pSZ7bVK-fWWGaKxO20Q5FKwIy35dApqOqIGPV7TX3fgg4LNRrqrj7SB-MHggBI6NuhPzzCbAMQKtorwOre2bXphbmYW7asrixJC0WPiPOnqnZWd5jvN-OU1e_5Q6S5AY0mRl-qIZEm6fENPNmI8rvga1K2Ukds1XuZ_z-XYRxAZEHI');">
+</div>
+<!-- Dark Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/60 to-surface/40 z-10"></div>
+</div>
+<!-- UI Shell (Suppressed Nav, but keeping Brand Identity) -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-12 py-6 max-w-[1920px] mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#e5e2e1]">Frame 25</div>
+<div class="text-[#95d1d6] font-['Inter'] text-xs uppercase tracking-widest studio-flicker">
+            Status: Connection Error // Signal Lost
+        </div>
+</header>
+<!-- Main Content Canvas -->
+<main class="relative z-20 flex flex-col items-center justify-center h-full text-center px-6">
+<!-- Rec Error HUD Layer (Positioned roughly where a camera screen might be in the visual flow) -->
+<div class="absolute top-1/4 md:top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-80">
+<div class="flex items-center gap-2 border border-error/30 bg-black/40 px-4 py-1 rounded-sm">
+<span class="rec-error-blink w-3 h-3 bg-error rounded-full"></span>
+<span class="font-mono text-error text-xs tracking-tighter uppercase font-bold">REC ERROR: STORAGE_FAILURE</span>
+</div>
+</div>
+<!-- Pulse Point (Memory Card) - Invisible anchor for the glow effect if positioned over character center -->
+<div class="absolute top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+<div class="cyan-pulse w-32 h-32 rounded-full bg-primary/5 blur-3xl"></div>
+</div>
+<!-- Typography Stack -->
+<div class="max-w-2xl space-y-8 studio-flicker">
+<div class="space-y-4">
+<h1 class="font-headline text-5xl md:text-8xl font-black tracking-tight text-on-surface leading-none">
+                    404 — <span class="text-primary-container">Memory Full</span>
+</h1>
+<p class="text-secondary text-lg md:text-xl font-medium max-w-lg mx-auto leading-relaxed">
+                    This shot wasn’t saved. Let’s go back and reshoot it.
+                </p>
+</div>
+<!-- Action Cluster -->
+<div class="flex flex-col md:flex-row items-center justify-center gap-8 pt-4">
+<!-- Primary Action -->
+<a class="group relative px-10 py-4 bg-primary-container text-on-primary font-bold tracking-tight rounded-sm transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(0,242,255,0.2)] hover:shadow-[0_0_40px_rgba(0,242,255,0.4)]" href="/">
+<span class="relative z-10 flex items-center gap-2 uppercase text-xs tracking-[0.2em]">
+                        Reshoot Scene
+                    </span>
+<!-- Underglow -->
+<div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</a>
+<!-- Secondary Action -->
+<a class="group flex items-center gap-3 text-on-surface hover:text-primary-container transition-colors duration-500 uppercase text-xs tracking-[0.2em] font-medium" href="/">
+<span>Go to Homepage</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</main>
+<!-- Technical HUD Details (Corner Info) -->
+<aside class="fixed bottom-12 left-12 z-20 hidden md:block opacity-40">
+<div class="font-mono text-[10px] space-y-1 text-secondary uppercase">
+<div class="flex gap-4"><span>ISO: 800</span><span>F-STOP: 2.8</span></div>
+<div>SHUTTER: 1/48</div>
+<div class="flex items-center gap-1"><span class="w-1.5 h-1.5 bg-primary-container rounded-full animate-pulse"></span> SYNC ACTIVE</div>
+</div>
+</aside>
+<aside class="fixed bottom-12 right-12 z-20 hidden md:block opacity-40">
+<div class="font-mono text-[10px] space-y-1 text-secondary text-right uppercase">
+<div>CAM_01 // 4K_RAW</div>
+<div>00:00:04:04</div>
+<div class="text-error font-bold">MISSING_MEDIA</div>
+</div>
+</aside>
+<!-- Footer Identity (Matching Shared Component) -->
+<footer class="fixed bottom-0 w-full px-12 py-8 z-30 pointer-events-none">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-end w-full">
+<div class="text-xl font-bold text-[#e5e2e1] pointer-events-auto">Frame 25</div>
+<div class="hidden md:block"></div>
+<div class="text-right text-[#95d1d6] font-['Inter'] text-[10px] uppercase tracking-widest pointer-events-auto">
+                © 2024 Frame 25. All rights reserved.
+            </div>
+</div>
+</footer>
+
+<!-- Animation Libraries (For custom cursor to work) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>
+    // 2. Custom Cursor Logic
+    const cursor = document.querySelector('.custom-cursor');
+    const cursorFollower = document.querySelector('.custom-cursor-follower');
+    
+    if (cursor && cursorFollower && window.innerWidth > 768) {
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
+        let cursorX = mouseX;
+        let cursorY = mouseY;
+        let followerX = mouseX;
+        let followerY = mouseY;
+
+        // Track Mouse
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        // Add hover state to interactive elements
+        const interactiveElements = document.querySelectorAll('a, button, input, select, .cursor-pointer, .glass-card, .group');
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                document.body.classList.add('cursor-hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                document.body.classList.remove('cursor-hover');
+            });
+        });
+
+        // Animation Loop using GSAP ticker
+        gsap.ticker.add(() => {
+            cursorX += (mouseX - cursorX) * 0.5;
+            cursorY += (mouseY - cursorY) * 0.5;
+            followerX += (mouseX - followerX) * 0.15;
+            followerY += (mouseY - followerY) * 0.15;
+
+            gsap.set(cursor, { x: cursorX, y: cursorY });
+            gsap.set(cursorFollower, { x: followerX, y: followerY });
+        });
+    }
+</script>
+</body></html>
