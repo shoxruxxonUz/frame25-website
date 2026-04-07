@@ -1,0 +1,127 @@
+/* Base Animation Layer */
+html.lenis {
+    height: auto;
+}
+.lenis.lenis-smooth {
+    scroll-behavior: auto;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+/* Custom Cursor */
+* {
+    /* Hide native cursor for a premium feel on non-touch devices */
+    cursor: none !important;
+}
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    background-color: #00f2ff;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+    transition: transform 0.1s ease, background-color 0.3s ease;
+}
+.custom-cursor-follower {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(0, 242, 255, 0.4);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.15s ease-out, width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover States for cursor */
+.cursor-hover .custom-cursor {
+    transform: translate(-50%, -50%) scale(0);
+}
+.cursor-hover .custom-cursor-follower {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0, 242, 255, 0.1);
+    border-color: rgba(0, 242, 255, 0.8);
+    backdrop-filter: blur(2px);
+}
+
+/* Specific Glows */
+.glow-pulse {
+    animation: glow-pulse-anim 3s ease-in-out infinite alternate;
+    display: inline-block;
+}
+
+@keyframes glow-pulse-anim {
+    0% { text-shadow: 0 0 10px rgba(0,242,255,0.2), 0 0 20px rgba(0,242,255,0.1); }
+    100% { text-shadow: 0 0 20px rgba(0,242,255,0.6), 0 0 40px rgba(0,242,255,0.4), 0 0 60px rgba(0,242,255,0.2); }
+}
+
+.glow-pulse-card {
+    animation: card-pulse-anim 4s ease-in-out infinite alternate;
+}
+
+@keyframes card-pulse-anim {
+    0% { box-shadow: 0 0 20px rgba(0,242,255,0.05); }
+    100% { box-shadow: 0 0 40px rgba(0,242,255,0.2); }
+}
+
+/* Animated Gradient Background for Hero */
+.hero-gradient-bg {
+    background: linear-gradient(120deg, #131313, #0a1f24, #131313);
+    background-size: 200% 200%;
+    animation: gradientMove 15s ease infinite;
+}
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Utilities */
+.line {
+    overflow: hidden;
+    padding-bottom: 0.1em; /* Prevent clipping */
+}
+.word {
+    display: inline-block;
+}
+
+/* Hover Icon Bounce */
+@keyframes icon-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+.g-service-card:hover .animate-icon-bounce {
+    animation: icon-bounce 1.5s infinite ease-in-out;
+}
+
+/* Hide scrollbar for review track */
+.reviews-track::-webkit-scrollbar {
+    display: none;
+}
+.reviews-track {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+/* Mobile Fallback for heavy animations */
+@media (max-width: 768px) {
+    .custom-cursor, .custom-cursor-follower {
+        display: none !important;
+    }
+    * {
+        cursor: auto !important;
+    }
+}

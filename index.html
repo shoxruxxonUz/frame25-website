@@ -7,6 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="animations.css" rel="stylesheet" />
 <title>Frame 25 | Creative Production Agency</title>
 <script id="tailwind-config">
       tailwind.config = {
@@ -95,6 +96,9 @@
     </style>
 </head>
 <body class="selection:bg-primary-container selection:text-on-primary">
+<!-- Custom Cursor -->
+<div class="custom-cursor"></div>
+<div class="custom-cursor-follower"></div>
 <!-- Top Navigation Bar -->
 <nav class="fixed top-0 w-full z-50 bg-[#131313]/40 backdrop-blur-md shadow-[0_20px_40px_rgba(0,242,255,0.04)]">
 <div class="flex justify-between items-center px-6 md:px-12 py-6 max-w-[1920px] mx-auto">
@@ -110,7 +114,7 @@
     <span class="text-outline-variant">|</span>
     <button id="lang-uz" class="hover:text-primary-container transition-colors">UZ</button>
 </div>
-<button data-i18n="nav_start" onclick="document.getElementById('contact').scrollIntoView()" class="bg-primary-container text-on-primary px-6 py-2.5 rounded-full font-bold text-sm tracking-tight scale-95 active:scale-90 transition-transform hover:opacity-80">
+<button data-i18n="nav_start" onclick="if(window.lenisInstance) window.lenisInstance.scrollTo('#contact'); else document.getElementById('contact').scrollIntoView();" class="bg-primary-container text-on-primary px-6 py-2.5 rounded-full font-bold text-sm tracking-tight scale-95 active:scale-90 transition-transform hover:opacity-80">
                 Get Started
             </button>
 </div>
@@ -119,18 +123,19 @@
 <!-- Hero Section -->
 <section class="relative h-screen flex items-center justify-center overflow-hidden">
 <div class="absolute inset-0 z-0">
-<img class="w-full h-full object-cover opacity-40" data-alt="cinematic slow motion shot of a high-end camera lens on a gimbal in a dark studio with electric blue neon reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVBsxZUx95VJgS5cS3P-EIqrfwRAUaxZI7Crs15yHy3qB68KWOeRWG4dy39wJLM16t11nstY7OwZaDoswa4Bdm8F_e_--sgQyepmzCgMwX4sKxjUREgKnRABLwnUw_zJL5eZIMAzT9XPD8IQ2w5TfDV7KtaD0Pbv39yL2SmP5Xwx56KZYWsfoZUI8r13Bl5ljfSyDvrh-8J7pPSbp982KhWLMJwC72jCydkCANzhFGj0kmTqksiU-nxObAf83UPedjB5bdwAdW5Qg"/>
-<div class="absolute inset-0 bg-gradient-to-b from-[#131313]/80 via-transparent to-[#131313]"></div>
+<img class="w-full h-full object-cover opacity-20" data-alt="cinematic slow motion shot of a high-end camera lens on a gimbal in a dark studio with electric blue neon reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVBsxZUx95VJgS5cS3P-EIqrfwRAUaxZI7Crs15yHy3qB68KWOeRWG4dy39wJLM16t11nstY7OwZaDoswa4Bdm8F_e_--sgQyepmzCgMwX4sKxjUREgKnRABLwnUw_zJL5eZIMAzT9XPD8IQ2w5TfDV7KtaD0Pbv39yL2SmP5Xwx56KZYWsfoZUI8r13Bl5ljfSyDvrh-8J7pPSbp982KhWLMJwC72jCydkCANzhFGj0kmTqksiU-nxObAf83UPedjB5bdwAdW5Qg"/>
+<div id="particles-js" class="absolute inset-0 w-full h-full z-10"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-[#131313]/80 via-transparent to-[#131313] z-20 pointer-events-none"></div>
 </div>
 <div class="relative z-10 text-center px-6 max-w-5xl">
-<h1 data-i18n="hero_title" class="text-5xl md:text-8xl font-black tracking-tighter mb-8 leading-[0.9] text-on-surface">
-                    Создаём контент, который приводит <span class="text-primary-container">клиентов</span>
+<h1 data-i18n="hero_title" class="hero-title text-5xl md:text-8xl font-black tracking-tighter mb-8 leading-[0.9] text-on-surface">
+                    Создаём контент, который приводит <span class="text-primary-container glow-pulse">клиентов</span>
 </h1>
-<p data-i18n="hero_desc" class="text-lg md:text-2xl text-secondary font-light max-w-2xl mx-auto mb-12">
+<p data-i18n="hero_desc" class="hero-subtitle text-lg md:text-2xl text-secondary font-light max-w-2xl mx-auto mb-12 opacity-0">
                     Видео, дизайн и продвижение под ключ для бизнеса и блогеров
                 </p>
-<div class="flex flex-col md:flex-row gap-6 justify-center items-center">
-<button data-i18n="hero_btn1" onclick="document.getElementById('contact').scrollIntoView()" class="w-full md:w-auto px-10 py-5 bg-gradient-to-br from-primary-container to-primary-fixed-dim text-on-primary font-bold rounded-full text-lg shadow-[0_0_30px_rgba(0,242,255,0.3)] hover:scale-105 transition-transform">
+<div class="hero-buttons flex flex-col md:flex-row gap-6 justify-center items-center opacity-0">
+<button data-i18n="hero_btn1" onclick="if(window.lenisInstance) window.lenisInstance.scrollTo('#contact'); else document.getElementById('contact').scrollIntoView();" class="w-full md:w-auto px-10 py-5 bg-gradient-to-br from-primary-container to-primary-fixed-dim text-on-primary font-bold rounded-full text-lg shadow-[0_0_30px_rgba(0,242,255,0.3)] hover:scale-105 transition-transform">
                         Получить консультацию
                     </button>
 <a data-i18n="hero_btn2" href="https://t.me/frame25_agency" target="_blank" class="w-full md:w-auto px-10 py-5 border border-outline-variant text-on-surface font-bold rounded-full text-lg hover:bg-surface-container-low transition-colors text-center inline-block">
@@ -242,21 +247,21 @@
 <div>
 <h3 class="text-2xl font-bold mb-12 border-b border-outline-variant/30 pb-4">Разовые услуги</h3>
 <div class="grid grid-cols-2 gap-6">
-<div class="glass-card p-8 rounded-xl hover:bg-surface-container-high transition-colors">
-<span class="material-symbols-outlined text-primary-container mb-4 block">content_cut</span>
-<h4 class="font-bold">Монтаж</h4>
+<div class="glass-card g-service-card p-8 rounded-xl transition-all duration-300 transform-gpu cursor-none hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(0,242,255,0.1)] hover:border-primary-container/50 overflow-hidden relative">
+<span class="material-symbols-outlined text-primary-container mb-4 block animate-icon-bounce">content_cut</span>
+<h4 class="font-bold relative z-10">Монтаж</h4>
 </div>
-<div class="glass-card p-8 rounded-xl hover:bg-surface-container-high transition-colors">
-<span class="material-symbols-outlined text-primary-container mb-4 block">photo_camera</span>
-<h4 class="font-bold">Съёмка</h4>
+<div class="glass-card g-service-card p-8 rounded-xl transition-all duration-300 transform-gpu cursor-none hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(0,242,255,0.1)] hover:border-primary-container/50 overflow-hidden relative">
+<span class="material-symbols-outlined text-primary-container mb-4 block animate-icon-bounce">photo_camera</span>
+<h4 class="font-bold relative z-10">Съёмка</h4>
 </div>
-<div class="glass-card p-8 rounded-xl hover:bg-surface-container-high transition-colors">
-<span class="material-symbols-outlined text-primary-container mb-4 block">draw</span>
-<h4 class="font-bold">Дизайн</h4>
+<div class="glass-card g-service-card p-8 rounded-xl transition-all duration-300 transform-gpu cursor-none hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(0,242,255,0.1)] hover:border-primary-container/50 overflow-hidden relative">
+<span class="material-symbols-outlined text-primary-container mb-4 block animate-icon-bounce">draw</span>
+<h4 class="font-bold relative z-10">Дизайн</h4>
 </div>
-<div class="glass-card p-8 rounded-xl hover:bg-surface-container-high transition-colors">
-<span class="material-symbols-outlined text-primary-container mb-4 block">track_changes</span>
-<h4 class="font-bold">Таргет</h4>
+<div class="glass-card g-service-card p-8 rounded-xl transition-all duration-300 transform-gpu cursor-none hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(0,242,255,0.1)] hover:border-primary-container/50 overflow-hidden relative">
+<span class="material-symbols-outlined text-primary-container mb-4 block animate-icon-bounce">track_changes</span>
+<h4 class="font-bold relative z-10">Таргет</h4>
 </div>
 </div>
 </div>
@@ -286,7 +291,7 @@
 <button class="w-full py-4 border border-outline-variant rounded-full font-bold hover:bg-white/5 transition-colors">Выбрать Start</button>
 </div>
 <!-- Grow -->
-<div class="bg-gradient-to-b from-primary-container to-[#00a3ad] p-[1px] rounded-xl relative scale-105 shadow-[0_30px_60px_rgba(0,242,255,0.15)] z-10">
+<div class="bg-gradient-to-b from-primary-container to-[#00a3ad] p-[1px] rounded-xl relative scale-105 shadow-[0_30px_60px_rgba(0,242,255,0.15)] z-10 glow-pulse-card cursor-none transition-all duration-300 hover:scale-110 hover:shadow-[0_40px_80px_rgba(0,242,255,0.25)]">
 <div class="bg-surface-container-low p-10 rounded-xl h-full flex flex-col">
 <div class="mb-8">
 <div class="flex justify-between items-start">
@@ -294,7 +299,8 @@
 <span class="bg-primary-container text-on-primary text-[10px] px-2 py-0.5 rounded font-bold">ХИТ</span>
 </div>
 <h3 class="text-3xl font-black mt-2 text-on-surface">Grow</h3>
-<div id="price-grow" class="text-3xl font-black mt-2">120 000 ₽</div>
+<div class="text-3xl font-black mt-2 pricing-number" data-target="120000" id="price-grow-val">120 000 ₽</div>
+<div class="hidden" id="price-grow">120 000 ₽</div>
 </div>
 <ul class="space-y-4 mb-12 text-sm text-on-surface flex-grow">
 <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container text-lg">check_circle</span> 2 съемки в месяц</li>
@@ -363,9 +369,9 @@
 </div>
 </section>
 <!-- Team -->
-<section class="py-32 px-6 md:px-12 bg-surface">
+<section class="py-32 px-6 md:px-12 bg-surface" id="team">
 <div class="max-w-[1400px] mx-auto">
-<div class="mb-20">
+<div class="mb-20 team-header">
 <h2 class="text-4xl md:text-6xl font-bold tracking-tighter">Кто создает ваш контент</h2>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -394,10 +400,13 @@
 </div>
 </section>
 <!-- Testimonials -->
-<section class="py-32 px-6 md:px-12 bg-surface-container-lowest overflow-hidden">
-<div class="max-w-[1400px] mx-auto">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<div class="glass-card p-10 rounded-2xl relative">
+<section class="py-32 px-6 md:px-12 bg-surface-container-lowest overflow-hidden flex flex-col" id="reviews">
+<div class="max-w-[1400px] mx-auto w-full mb-16">
+    <h2 class="text-4xl md:text-6xl font-bold tracking-tighter">Отзывы</h2>
+</div>
+<div class="w-full relative py-4">
+<div class="flex gap-8 px-6 md:px-12 reviews-track w-max">
+<div class="glass-card p-10 rounded-2xl relative w-[400px] shrink-0 cursor-grab active:cursor-grabbing hover:scale-105 transition-transform duration-300">
 <span class="material-symbols-outlined text-primary-container text-5xl absolute -top-4 -left-2 opacity-20" style="font-variation-settings: 'FILL' 1;">format_quote</span>
 <p class="text-lg leading-relaxed italic mb-8 relative z-10">"Frame 25 полностью изменили наш подход к Reels. За 2 месяца мы получили больше лидов, чем за весь прошлый год через таргет."</p>
 <div class="flex items-center gap-4">
@@ -437,11 +446,10 @@
 </div>
 </div>
 </div>
-</div>
 </section>
 <!-- Lead Form & Final CTA -->
 <section class="py-32 px-6 md:px-12 bg-surface" id="contact">
-<div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div class="contact-wrapper max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
 <div>
 <h2 class="text-5xl md:text-7xl font-black tracking-tighter mb-8 leading-tight">
                         Оставьте заявку и получите идеи для контента <span class="text-primary-container italic">бесплатно</span>
@@ -512,7 +520,7 @@
     const translations = {
         ru: {
             nav_portfolio: "Portfolio", nav_services: "Services", nav_pricing: "Pricing", nav_contact: "Contact", nav_start: "Get Started",
-            hero_title: "Создаём контент, который приводит <span class='text-primary-container'>клиентов</span>",
+            hero_title: "Создаём контент, который приводит <span class='text-primary-container glow-pulse'>клиентов</span>",
             hero_desc: "Видео, дизайн и продвижение под ключ для бизнеса и блогеров",
             hero_btn1: "Получить консультацию", hero_btn2: "Написать в Telegram",
             calc_videos_label: "Количество видео",
@@ -535,7 +543,7 @@
         },
         uz: {
             nav_portfolio: "Portfel", nav_services: "Xizmatlar", nav_pricing: "Narxlar", nav_contact: "Aloqa", nav_start: "Boshlash",
-            hero_title: "Mijozlarni jalb qiladigan kontent <span class='text-primary-container'>yaratamiz</span>",
+            hero_title: "Mijozlarni jalb qiladigan kontent <span class='text-primary-container glow-pulse'>yaratamiz</span>",
             hero_desc: "Biznes va blogerlar uchun videoyechim, dizayn va reklama",
             hero_btn1: "Konsultatsiya olish", hero_btn2: "Telegram orqali bog'lanish",
             calc_videos_label: "Videolar soni",
@@ -599,6 +607,11 @@
                 btnUz.classList.add('text-primary-container'); btnUz.classList.remove('text-on-surface-variant');
                 btnRu.classList.add('text-on-surface-variant'); btnRu.classList.remove('text-primary-container');
             }
+        }
+        
+        // Let GSAP know text changed if we want to re-run animations
+        if (window.runHeroAnimation) {
+            window.runHeroAnimation();
         }
         
         // Update placeholders
@@ -680,7 +693,11 @@
     const serviceSelect = document.getElementById('service-select');
     function scrollToContactAndSelect(value) {
         if(serviceSelect && value) serviceSelect.value = value;
-        document.getElementById('contact').scrollIntoView();
+        if(window.lenisInstance) {
+            window.lenisInstance.scrollTo('#contact');
+        } else {
+            document.getElementById('contact').scrollIntoView();
+        }
     }
 
     document.addEventListener('click', (e) => {
@@ -763,4 +780,13 @@
     updatePricingCards(currentLang);
     calculatePrice();
 </script>
+
+<!-- Animation Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/split-type@0.3.3/umd/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="animations.js"></script>
+
 </body></html>
