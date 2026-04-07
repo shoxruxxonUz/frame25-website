@@ -157,10 +157,15 @@
 <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/60 to-surface/40 z-10"></div>
 </div>
 <!-- UI Shell (Suppressed Nav, but keeping Brand Identity) -->
-<header class="fixed top-0 w-full z-50 flex justify-between items-center px-12 py-6 max-w-[1920px] mx-auto">
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-12 py-6 max-w-[1920px] mx-auto pointer-events-auto">
 <div class="text-2xl font-black tracking-tighter text-[#e5e2e1]">Frame 25</div>
-<div class="text-[#95d1d6] font-['Inter'] text-xs uppercase tracking-widest studio-flicker">
-            Status: Connection Error // Signal Lost
+<div class="flex items-center gap-2 text-sm font-bold text-on-surface mx-auto md:mx-0">
+    <button id="lang-ru" class="text-primary-container transition-colors">RU</button>
+    <span class="text-outline-variant">|</span>
+    <button id="lang-uz" class="hover:text-primary-container transition-colors">UZ</button>
+</div>
+<div data-i18n="status" class="text-[#95d1d6] font-['Inter'] text-xs uppercase tracking-widest studio-flicker hidden md:block">
+            Статус: Ошибка соединения // Сигнал потерян
         </div>
 </header>
 <!-- Main Content Canvas -->
@@ -169,7 +174,7 @@
 <div class="absolute top-1/4 md:top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-80">
 <div class="flex items-center gap-2 border border-error/30 bg-black/40 px-4 py-1 rounded-sm glitch-text" style="animation-delay: 2.1s;">
 <span class="rec-error-blink w-3 h-3 bg-error rounded-full"></span>
-<span class="font-mono text-error text-xs tracking-tighter uppercase font-bold">REC ERROR: STORAGE_FAILURE</span>
+<span data-i18n="error_badge" class="font-mono text-error text-xs tracking-tighter uppercase font-bold">REC ERROR: ОШИБКА_НАКОПИТЕЛЯ</span>
 </div>
 </div>
 <!-- Pulse Point (Memory Card) - Invisible anchor for the glow effect if positioned over character center -->
@@ -177,28 +182,28 @@
 <div class="cyan-pulse w-32 h-32 rounded-full bg-primary/5 blur-3xl"></div>
 </div>
 <!-- Typography Stack -->
-<div class="max-w-2xl space-y-8 studio-flicker">
+<div class="max-w-2xl space-y-8 studio-flicker pointer-events-auto">
 <div class="space-y-4">
-<h1 class="font-headline text-5xl md:text-8xl font-black tracking-tight text-on-surface leading-none glitch-text">
-                    404 — <span class="text-primary-container">Memory Full</span>
+<h1 data-i18n="title" class="font-headline text-5xl md:text-8xl font-black tracking-tight text-on-surface leading-none glitch-text">
+                    404 — <span class="text-primary-container">Память полна</span>
 </h1>
-<p class="text-secondary text-lg md:text-xl font-medium max-w-lg mx-auto leading-relaxed glitch-text" style="animation-delay: 0.5s;">
-                    This shot wasn’t saved. Let’s go back and reshoot it.
+<p data-i18n="desc" class="text-secondary text-lg md:text-xl font-medium max-w-lg mx-auto leading-relaxed glitch-text" style="animation-delay: 0.5s;">
+                    Этот дубль не сохранился. Давайте вернемся и переснимем.
                 </p>
 </div>
 <!-- Action Cluster -->
 <div class="flex flex-col md:flex-row items-center justify-center gap-8 pt-4">
 <!-- Primary Action -->
 <a class="group relative px-10 py-4 bg-primary-container text-on-primary font-bold tracking-tight rounded-sm transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(0,242,255,0.2)] hover:shadow-[0_0_40px_rgba(0,242,255,0.4)]" href="/">
-<span class="relative z-10 flex items-center gap-2 uppercase text-xs tracking-[0.2em]">
-                        Reshoot Scene
+<span data-i18n="btn_reshoot" class="relative z-10 flex items-center gap-2 uppercase text-xs tracking-[0.2em]">
+                        Переснять сцену
                     </span>
 <!-- Underglow -->
 <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
 </a>
 <!-- Secondary Action -->
 <a class="group flex items-center gap-3 text-on-surface hover:text-primary-container transition-colors duration-500 uppercase text-xs tracking-[0.2em] font-medium" href="/">
-<span>Go to Homepage</span>
+<span data-i18n="btn_home">На главную</span>
 <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
 </a>
 </div>
@@ -273,5 +278,56 @@
             gsap.set(cursorFollower, { x: followerX, y: followerY });
         });
     }
+
+    // 3. Language Switcher
+    const translations = {
+        ru: {
+            status: "Статус: Ошибка соединения // Сигнал потерян",
+            error_badge: "REC ERROR: ОШИБКА_НАКОПИТЕЛЯ",
+            title: "404 — <span class='text-primary-container'>Память полна</span>",
+            desc: "Этот дубль не сохранился. Давайте вернемся и переснимем.",
+            btn_reshoot: "Переснять сцену",
+            btn_home: "На главную"
+        },
+        uz: {
+            status: "Status: Aloqa xatosi // Signal yo'qotildi",
+            error_badge: "REC ERROR: XOTIRA_XATOSI",
+            title: "404 — <span class='text-primary-container'>Xotira to'ldi</span>",
+            desc: "Bu kadr saqlanmadi. Keling orqaga qaytib, qayta suratga olamiz.",
+            btn_reshoot: "Qayta suratga olish",
+            btn_home: "Bosh sahifaga"
+        }
+    };
+
+    let currentLang = localStorage.getItem('lang') || 'ru';
+
+    function setLanguage(lang) {
+        currentLang = lang;
+        localStorage.setItem('lang', lang);
+        
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (translations[lang] && translations[lang][key]) {
+                el.innerHTML = translations[lang][key];
+            }
+        });
+
+        const btnRu = document.getElementById('lang-ru');
+        const btnUz = document.getElementById('lang-uz');
+        if(btnRu && btnUz) {
+            if(lang === 'ru') {
+                btnRu.classList.add('text-primary-container'); btnRu.classList.remove('text-on-surface-variant');
+                btnUz.classList.add('text-on-surface-variant'); btnUz.classList.remove('text-primary-container');
+            } else {
+                btnUz.classList.add('text-primary-container'); btnUz.classList.remove('text-on-surface-variant');
+                btnRu.classList.add('text-on-surface-variant'); btnRu.classList.remove('text-primary-container');
+            }
+        }
+    }
+
+    document.getElementById('lang-ru')?.addEventListener('click', () => setLanguage('ru'));
+    document.getElementById('lang-uz')?.addEventListener('click', () => setLanguage('uz'));
+
+    setLanguage(currentLang);
 </script>
 </body></html>

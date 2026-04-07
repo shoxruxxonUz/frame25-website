@@ -566,7 +566,7 @@
         }
     };
 
-    let currentLang = 'ru';
+    let currentLang = localStorage.getItem('lang') || 'ru';
     let basePricePerVideo = { ru: 50, uz: 600000 }; 
     let addons = {
         outdoor: { ru: 150, uz: 1800000 },
@@ -586,6 +586,7 @@
 
     function setLanguage(lang) {
         currentLang = lang;
+        localStorage.setItem('lang', lang);
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.getAttribute('data-i18n');
             if (translations[lang] && translations[lang][key]) {
@@ -777,6 +778,7 @@
     });
 
     // Initiate
+    setLanguage(currentLang);
     updatePricingCards(currentLang);
     calculatePrice();
 </script>
