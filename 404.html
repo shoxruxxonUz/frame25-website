@@ -115,6 +115,28 @@
         .cyan-pulse {
             animation: pulse-cyan 2s ease-in-out infinite;
         }
+        @keyframes rgb-split-glitch {
+            0%, 100% { text-shadow: none; transform: translate(0,0) skew(0deg); }
+            2% { text-shadow: -4px 0 #93000a, 4px 0 #00f2ff; transform: translate(-2px, 1px) skew(-5deg); }
+            4% { text-shadow: 4px 0 #93000a, -4px 0 #00f2ff; transform: translate(2px, -1px) skew(5deg); }
+            6% { text-shadow: none; transform: translate(0,0) skew(0deg); }
+            45% { text-shadow: none; transform: translate(0,0) skew(0deg); }
+            47% { text-shadow: -2px 0 #93000a, 2px 0 #00f2ff; transform: translate(1px, -1px) skew(2deg); }
+            49% { text-shadow: none; transform: translate(0,0) skew(0deg); }
+        }
+        .glitch-text {
+            animation: rgb-split-glitch 5s infinite;
+            display: inline-block;
+        }
+        @keyframes camera-glitch {
+            0%, 100% { transform: scale(1.05) translateX(0); filter: brightness(1) contrast(1); }
+            10% { transform: scale(1.05) translateX(-2px); filter: brightness(1.2) contrast(1.5); }
+            12% { transform: scale(1.05) translateX(2px); filter: brightness(0.8) contrast(1); }
+            14% { transform: scale(1.05) translateX(0); filter: brightness(1) contrast(1); }
+        }
+        .glitch-bg {
+            animation: handheld 8s ease-in-out infinite, camera-glitch 7s infinite;
+        }
         .glass-panel {
             background: rgba(19, 19, 19, 0.4);
             backdrop-filter: blur(20px);
@@ -129,7 +151,7 @@
 <!-- Global Background Wrapper -->
 <div class="fixed inset-0 z-0 overflow-hidden bg-surface-container-lowest">
 <!-- Cinematic Background Image -->
-<div class="absolute inset-0 w-full h-full handheld-scene studio-flicker bg-cover bg-center" data-alt="Cinematic wide shot of a professional camera operator in a dark studio holding a memory card, moody teal lighting and dramatic shadows" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBbmY6B_uIG1uUFX-2O2A-FS2cBqWCVffBWgRUw83CiQiFXUKvMy5MHCW6QOO1GyQ3K90dtfDBhjCLWv3aZNwEtkbuPjjzt-pSZ7bVK-fWWGaKxO20Q5FKwIy35dApqOqIGPV7TX3fgg4LNRrqrj7SB-MHggBI6NuhPzzCbAMQKtorwOre2bXphbmYW7asrixJC0WPiPOnqnZWd5jvN-OU1e_5Q6S5AY0mRl-qIZEm6fENPNmI8rvga1K2Ukds1XuZ_z-XYRxAZEHI');">
+<div class="absolute inset-0 w-full h-full glitch-bg studio-flicker bg-cover bg-center" data-alt="Cinematic wide shot of a professional camera operator in a dark studio holding a memory card, moody teal lighting and dramatic shadows" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBbmY6B_uIG1uUFX-2O2A-FS2cBqWCVffBWgRUw83CiQiFXUKvMy5MHCW6QOO1GyQ3K90dtfDBhjCLWv3aZNwEtkbuPjjzt-pSZ7bVK-fWWGaKxO20Q5FKwIy35dApqOqIGPV7TX3fgg4LNRrqrj7SB-MHggBI6NuhPzzCbAMQKtorwOre2bXphbmYW7asrixJC0WPiPOnqnZWd5jvN-OU1e_5Q6S5AY0mRl-qIZEm6fENPNmI8rvga1K2Ukds1XuZ_z-XYRxAZEHI');">
 </div>
 <!-- Dark Overlay -->
 <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/60 to-surface/40 z-10"></div>
@@ -145,7 +167,7 @@
 <main class="relative z-20 flex flex-col items-center justify-center h-full text-center px-6">
 <!-- Rec Error HUD Layer (Positioned roughly where a camera screen might be in the visual flow) -->
 <div class="absolute top-1/4 md:top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-80">
-<div class="flex items-center gap-2 border border-error/30 bg-black/40 px-4 py-1 rounded-sm">
+<div class="flex items-center gap-2 border border-error/30 bg-black/40 px-4 py-1 rounded-sm glitch-text" style="animation-delay: 2.1s;">
 <span class="rec-error-blink w-3 h-3 bg-error rounded-full"></span>
 <span class="font-mono text-error text-xs tracking-tighter uppercase font-bold">REC ERROR: STORAGE_FAILURE</span>
 </div>
@@ -157,10 +179,10 @@
 <!-- Typography Stack -->
 <div class="max-w-2xl space-y-8 studio-flicker">
 <div class="space-y-4">
-<h1 class="font-headline text-5xl md:text-8xl font-black tracking-tight text-on-surface leading-none">
+<h1 class="font-headline text-5xl md:text-8xl font-black tracking-tight text-on-surface leading-none glitch-text">
                     404 — <span class="text-primary-container">Memory Full</span>
 </h1>
-<p class="text-secondary text-lg md:text-xl font-medium max-w-lg mx-auto leading-relaxed">
+<p class="text-secondary text-lg md:text-xl font-medium max-w-lg mx-auto leading-relaxed glitch-text" style="animation-delay: 0.5s;">
                     This shot wasn’t saved. Let’s go back and reshoot it.
                 </p>
 </div>
