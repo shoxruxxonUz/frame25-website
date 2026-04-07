@@ -170,20 +170,19 @@
 </header>
 <!-- Main Content Canvas -->
 <main class="relative z-20 flex flex-col items-center justify-center h-full text-center px-6">
-<!-- Rec Error HUD Layer (Positioned roughly where a camera screen might be in the visual flow) -->
-<div class="absolute top-1/4 md:top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-80">
-<div class="flex items-center gap-2 border border-error/30 bg-black/40 px-4 py-1 rounded-sm glitch-text" style="animation-delay: 2.1s;">
-<span class="rec-error-blink w-3 h-3 bg-error rounded-full"></span>
-<span data-i18n="error_badge" class="font-mono text-error text-xs tracking-tighter uppercase font-bold">REC ERROR: ОШИБКА_НАКОПИТЕЛЯ</span>
-</div>
-</div>
+
 <!-- Pulse Point (Memory Card) - Invisible anchor for the glow effect if positioned over character center -->
 <div class="absolute top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
 <div class="cyan-pulse w-32 h-32 rounded-full bg-primary/5 blur-3xl"></div>
 </div>
 <!-- Typography Stack -->
 <div class="max-w-2xl space-y-8 studio-flicker pointer-events-auto">
-<div class="space-y-4">
+<div class="space-y-6 flex flex-col items-center">
+<!-- Rec Error HUD Layer -->
+<div class="flex items-center gap-2 border border-error/30 bg-black/40 px-4 py-1 rounded-sm glitch-text w-max opacity-80" style="animation-delay: 2.1s;">
+<span class="rec-error-blink w-3 h-3 bg-error rounded-full"></span>
+<span data-i18n="error_badge" class="font-mono text-error text-xs tracking-tighter uppercase font-bold">REC ERROR: ОШИБКА_НАКОПИТЕЛЯ</span>
+</div>
 <h1 data-i18n="title" class="font-headline text-5xl md:text-8xl font-black tracking-tight text-on-surface leading-none glitch-text">
                     404 — <span class="text-primary-container">Память полна</span>
 </h1>
